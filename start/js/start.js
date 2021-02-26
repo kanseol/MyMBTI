@@ -19,7 +19,8 @@ function setResult() {
     var imgURL = 'img/image-' + point + '.png';
     resultImg.src = imgURL;
     resultImg.alt = point;
-    resultImg.classList(resultImg);
+    resultImg.classList.add('img-fluid');
+    imgDiv.appendChild(resultImg);
 
     const resultDesc = document.querySelector('.resultDesc');
     resultDesc.innerHTML = infoList[point].desc;
@@ -59,11 +60,10 @@ function addAnser(answerText, qIdx, idx) {
         }
         setTimeout(() => {
             var target = qnaList[qIdx].a[idx].type;
-            for(let j = 0; j < target.length; j++) {
+            for(let i = 0; i < target.length; i++) {
                 select[target[i]] += 1;
             }
 
-            select[] = idx;
             for(let i = 0; i < children.length; i++){
                 children[i].style.display = 'none';
             }
